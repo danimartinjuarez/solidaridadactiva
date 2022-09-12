@@ -8,7 +8,7 @@
 </script>
 <style lang="css" scoped>
     nav {
-  width: 20%;
+  width: 10%;
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;

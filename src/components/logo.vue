@@ -1,12 +1,12 @@
 <template>
-    <img src="../../public/logo.webp" alt="logo" />
+    <img src="../../public/logo.png" alt="logo" class="img-fluid"/>
 
 </template>
 <script setup>
 </script>
 <style scoped>
     img{
-        width: 10vw;
+        width: 6%;
     }
 </style>>
  
