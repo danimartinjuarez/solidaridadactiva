@@ -1,17 +1,10 @@
 @import "./base.css";
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
-}
 
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: rgb(225, 141, 72);
   transition: 0.4s;
 }
 
@@ -24,9 +17,5 @@ a,
 @media (min-width: 1024px) {
   
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+  
 }

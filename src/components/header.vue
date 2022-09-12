@@ -1,8 +1,8 @@
 <template>
-    <div class="header">
+    <div class="header w-100 p-3">
         <Logo></Logo>
-        <p>
-            <span>SOLIDARIDAD ACTIVA</span>
+        <p class="title">
+            <span>SOLIDARID-ACTIVA</span>
         </p>
         <Menu></Menu>
     </div>
@@ -16,16 +16,17 @@ import Logo from './logo.vue';
 <style>
 .header {
     display: flex;
+	width: 100%;
     
 }
 
-p {
+.title {
 	letter-spacing: .5em;
 	border: 4px double rgba(255,255,255,.25);
 	border-width: 4px 0;
 	padding: 1.5em 0em;
 	top: 4%;
-	width: 92vw;
+	width: 90%;
 	margin: 0 0 0 0em;
     text-align: center;
 }
