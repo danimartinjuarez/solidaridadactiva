@@ -1,50 +1,47 @@
 <template>
-    <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+ 
+      <div class="dropdown show nav " >
+        <a class="dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">MENU
+          <span class="p-0 m-0">--</span>
+                    <span class="p-0 m-0">--</span>
+          <span class="p-0 m-0">--</span>
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+          <RouterLink to="/">Home</RouterLink><br>
+          <RouterLink to="/about">About</RouterLink>
+        </div>
+      </div>
 </template>
 <script setup>
 </script>
 <style lang="css" scoped>
-    nav {
-  width: 10%;
-  font-size: 12px;
-  text-align: center;
+.nav {
+  width: 5%;
   margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
+a.router-link-exact-active {
   color: var(--color-text);
 }
 
-nav a.router-link-exact-active:hover {
+a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
-nav a {
+a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
 }
 
-nav a:first-of-type {
+a:first-of-type {
   border: 0;
 }
+span{
+  height: 10%;
+  line-height: 0%;
+  font-weight: bold;
 
-@media (min-width: 1024px) {
-  
-
-  
-
-  
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-    float: right;
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
 }
 </style>
