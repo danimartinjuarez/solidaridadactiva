@@ -17,4 +17,5 @@ import LogoMail from './LogoMail.vue';
 
 </script>
 <style scoped>
+
 </style>
