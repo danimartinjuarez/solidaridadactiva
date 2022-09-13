@@ -4,7 +4,7 @@ import Header from './components/header.vue';
 import footerVue from './components/footer.vue';
 </script>
 
-<template><div>
+<template><div class="m-0 row justify-content-center " style="--bs-gutter-x:0;">
  <Header></Header>
   <RouterView />
   <footerVue></footerVue>
