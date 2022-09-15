@@ -9,7 +9,7 @@
         </a>
         <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
           <RouterLink to="/">Home</RouterLink><br>
-          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/Nosotros">Nosotros</RouterLink>
         </div>
       </div>
 </template>
