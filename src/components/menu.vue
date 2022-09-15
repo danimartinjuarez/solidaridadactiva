@@ -8,8 +8,10 @@
           <span class="p-0 m-0">--</span>
         </a>
         <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-          <RouterLink to="/">Home</RouterLink><br>
+          <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/Nosotros">Nosotros</RouterLink>
+          <RouterLink to="/Normas">Normas</RouterLink>
+          
         </div>
       </div>
 </template>
