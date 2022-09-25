@@ -1,12 +1,9 @@
 <template>
-    <img src="../../public/logo.png" alt="logo" class="img-logo"/>
+    <img src="../../public/logo.png" alt="logo" class="img-logo img-fluid"/>
 
 </template>
 <script setup>
 </script>
 <style scoped>
-    img{
-        width: 6%;
-    }
 </style>>
  

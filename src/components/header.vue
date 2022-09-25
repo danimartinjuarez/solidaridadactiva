@@ -16,7 +16,7 @@ import Logo from './logo.vue';
 <style>
 .header {
     display: flex;
-	width: 100%;
+	height: 20vh;
     
 }
 
@@ -26,7 +26,7 @@ import Logo from './logo.vue';
 	border-width: 4px 0;
 	padding: 1.5em 0em;
 	top: 4%;
-	width: 90%;
+	width: 100%;
 	margin: 0 0 0 0em;
     text-align: center;
 }

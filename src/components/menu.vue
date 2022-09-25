@@ -7,7 +7,7 @@
                     <span class="p-0 m-0">--</span>
           <span class="p-0 m-0">--</span>
         </a>
-        <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+        <div class="dropdown-menu bg-white" aria-labelledby="dropdownMenuLink">
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/Nosotros">Nosotros</RouterLink>
           <RouterLink to="/Normas">Normas</RouterLink>
@@ -19,7 +19,7 @@
 </script>
 <style lang="css" scoped>
 .nav {
-  width: 5%;
+  width: 12%;
   margin-top: 2rem;
 }
 

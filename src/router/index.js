@@ -25,6 +25,46 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/NormasView.vue')
+    },
+    {
+      path: '/Baby',
+      name: 'Baby',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/BabyView.vue')
+    },
+        {
+      path: '/Senior',
+      name: 'Senior',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/SeniorView.vue')
+    },
+        {
+      path: '/General',
+      name: 'General',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/GeneralView.vue')
+    },
+        {
+      path: '/Pets',
+      name: 'Pets',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/PetsView.vue')
+    },
+         {
+      path: '/Create',
+      name: 'Create',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/CreateUserView.vue')
     }
   ]
 })

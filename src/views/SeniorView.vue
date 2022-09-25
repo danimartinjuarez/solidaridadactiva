@@ -11,7 +11,12 @@ export default {
         fetch("http://127.0.0.1:8080/api/v1/users")
             .then(response => response.json())
             .then(data => {
-                this.users = data;
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].activityType === "senior") {
+                        this.users.push(data[i]);
+                    }
+                }
+
             });
     },
     components: { Card, MenuFilter }
@@ -21,7 +26,7 @@ export default {
 <template>
     <MenuFilter></MenuFilter>
     <div class=" home row row-cols-1 row-cols-md-3 m-5">
-    <Card v-for='user in users' :key='user.id' :user="user"></Card>
+        <Card v-for="user in users" :key='user.id' :user="user"></Card>
 
     </div>
 </template>

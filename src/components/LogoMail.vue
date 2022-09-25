@@ -9,7 +9,7 @@
 <style scoped>
 
 .e-mail{
-    width: 15%;
+    width: 5%;
 }
     
 </style>
