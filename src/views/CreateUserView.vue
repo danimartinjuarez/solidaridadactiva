@@ -14,15 +14,16 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Contacto</label>
-                            <input v-model="user.email" type="text"
-                                :class="{ 'is-invalid': process && invalidEmail }" class="form-control"
+                            <input v-model="user.contact" type="text"
+                                :class="{ 'is-invalid': process && invalidContact }" class="form-control"
                                 @focus="resetEstado" />
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Tipo de actividad</label>
-                            <input v-model="user.activityType" type="text" :class="{ 'is-invalid': process && invalidActivityType }" class="form-control"
+                            <input v-model="user.activityType" type="text"
+                                :class="{ 'is-invalid': process && invalidActivityType }" class="form-control"
                                 @focus="resetEstado" />
                         </div>
                     </div>
@@ -36,22 +37,25 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Localizacion</label>
-                            <input v-model="user.location" type="text" :class="{ 'is-invalid': process && invalidLocation }"
-                                class="form-control" @focus="resetEstado" />
+                            <input v-model="user.location" type="text"
+                                :class="{ 'is-invalid': process && invalidLocation }" class="form-control"
+                                @focus="resetEstado" />
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Necesito:</label>
-                            <input v-model="user.whatLike" type="text" :class="{ 'is-invalid': process && invalidWhatLike }"
-                                class="form-control" @focus="resetEstado" />
+                            <input v-model="user.whatLike" type="text"
+                                :class="{ 'is-invalid': process && invalidWhatLike }" class="form-control"
+                                @focus="resetEstado" />
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Ofrezco:</label>
-                            <input v-model="user.whatOffer" type="text" :class="{ 'is-invalid': process && invalidWhatOffer }"
-                                class="form-control" @focus="resetEstado" />
+                            <input v-model="user.whatOffer" type="text"
+                                :class="{ 'is-invalid': process && invalidWhatOffer }" class="form-control"
+                                @focus="resetEstado" />
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -69,7 +73,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="container">
                 <div class="row">
@@ -97,23 +101,24 @@ export default {
             error: false,
             user: {
                 name: '',
-                email: '',
-                activityType: '',
-                location: '',
                 photo: '',
-                whatLike: '',
                 whatOffer: '',
-                title: '',
+                whatLike: '',
+                location: '',
+                contact: '',
+                activityType: '',
+                title: ''
             }
         }
     },
+
     methods: {
         sendForm() {
             this.process = true;
             this.resetEstado();
 
             // Comprobamos la presencia de errores
-            if (this.invalidName || this.invalidEmail || this.invalidActivityType || this.invalidLocation || this.invalidphoto || this.invalidWhatLike || this.invalidWhatOffer || this.invalidTitle) {
+            if (this.invalidName || this.invalidContact || this.invalidActivityType || this.invalidLocation || this.invalidphoto || this.invalidWhatLike || this.invalidWhatOffer || this.invalidTitle) {
                 this.error = true;
                 return;
             }
@@ -125,32 +130,46 @@ export default {
             // Restablecemos el valor de la variables
             this.user = {
                 name: '',
-                email: '',
-                activityType: '',
-                location: '',
                 photo: '',
-                whatLike: '',
                 whatOffer: '',
-                title: '',
+                whatLike: '',
+                location: '',
+                contact: '',
+                activityType: '',
+                title: ''
             }
         },
         resetEstado() {
             this.correcto = false;
             this.error = false;
         },
-        
-        
+        async postUser(user) {
+            try {
+                const response = await fetch('http://127.0.0.1:8080/api/v1/users/createUser', {
+                    method: 'POST',
+                    body: JSON.stringify(user),
+                    headers: { 'Content-type': 'application/json; charset=UTF-8' },
+                });
+
+                const usuarioCreado = await response.json();
+                this.usuarios = [...this.usuarios, usuarioCreado];
+            } catch (error) {
+                console.error(error);
+            }
+            window.location.href = "/";
+        },
+
     },
     computed: {
-        nameInvalido() {
+        invalidName() {
             return this.user.name.length < 1;
         },
-        invalidEmail() {
-            return this.user.email.length < 1;
+        invalidContact() {
+            return this.user.contact.length < 1;
         },
-        invalidActivityType(){
+        invalidActivityType() {
             this.user.activityType.length < 1;
-        }, 
+        },
         invalidLocation() {
             this.user.location.length < 1;
         },
@@ -167,13 +186,13 @@ export default {
             this.user.title.length < 1;
         }
     },
-    
-        
-    
-    
+
+
+
+
 }
 </script>
 
 <style>
-    
+
 </style>

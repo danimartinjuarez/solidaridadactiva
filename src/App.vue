@@ -14,7 +14,7 @@ import footerVue from './components/footer.vue';
 
 <style scoped>
 .app{
-    background: linear-gradient(to right,rgba(70, 70, 70, 0.54),rgba(212, 211, 212, 0.31));
+    background: linear-gradient(to right,rgba(70, 70, 70, 0.875),rgba(70, 70, 70, 0.264));
     min-height: 100vh;
     min-width: 100vw;
   }
