@@ -97,6 +97,4 @@ export default {
 }
 </script>
 <style scoped>
-#card
-{}
 </style>

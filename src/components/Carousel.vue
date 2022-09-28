@@ -1,10 +1,11 @@
-<template >
- <base href="../../public/logo.png">
-<div id="carousel">
-  <figure id="spinner">
-    <img src="../../public/logo.png" alt>
-    <img src="../../public/bizumImg.png" alt>
-    <img src="../../public/facebookImg.png" alt>
+<template>
+  <base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/wanaka-tree.jpg">
+
+<div id="carousel" >
+  <figure id="spinner" ref="spinner">
+    <img src="./carrusel1.jpg" alt>
+    <img src="still-lake.jpg" alt>
+    <img src="pink-milford-sound.jpg" alt>
     <img src="paradise.jpg" alt>
     <img src="morekai.jpg" alt>
     <img src="milky-blue-lagoon.jpg" alt>
@@ -12,25 +13,35 @@
     <img src="milford-sound.jpg" alt>
   </figure>
 </div>
-<span style="float:left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
-<span style="float:right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
+<span style="float:left" class="ss-icon" @click="galleryspin('-')">&lt;</span>
+<span style="float:right" class="ss-icon" @click="galleryspin('')">&gt;</span>
 </template>
 <script>
-export default {
+  export default{
+    data: () => ({
+    angle: 0
+  }),     
+
     
+
+ methods: {
+  
+ 
+  
+galleryspin(sign) { 
+ 
+if (!sign) { this.angle = this.$angle + 45; } else { this.$angle = this.$angle - 45; }
+
+document.querySelector("#spinner").setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
 }
-var angle = 0;
-function galleryspin(sign) { 
-spinner = document.querySelector("#spinner");
-if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
-spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+},
 }
 </script>
-<style >
-    div#carousel { 
+<style>
+  div#carousel { 
   perspective: 1200px; 
-  background: #100000; 
-  padding-top: 10%; 
+  background: #F1FBEA; 
+  padding-top: 1%; 
   font-size:0; 
   margin-bottom: 3rem; 
   overflow: hidden; 
@@ -57,7 +68,7 @@ figure#spinner img:nth-child(6){ transform: rotateY(-225deg); }
 figure#spinner img:nth-child(7){ transform: rotateY(-270deg); }
 figure#spinner img:nth-child(8){ transform: rotateY(-315deg); }
 div#carousel ~ span { 
-  color: #fff; 
+  color: rgb(3, 3, 3); 
   margin: 5%; 
   display: inline-block; 
   text-decoration: none; 
@@ -67,5 +78,5 @@ div#carousel ~ span {
   margin-top: -6rem; 
   border-bottom: none; 
   line-height: 0; }
-div#carousel ~ span:hover { color: #888; cursor: pointer; }
+div#carousel ~ span:hover { color: rgb(84, 224, 53); cursor: pointer; }
 </style>
