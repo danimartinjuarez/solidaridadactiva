@@ -1,5 +1,5 @@
 <template>
-   <ul class="list-group list-group-horizontal ">
+   <ul class="list-group list-group-horizontal border-bottom border-dark">
         <RouterLink to="/Nosotros" class="w-20 ">
             <li class="list-group-item list-group-item text-center h5">Sobre Nosotros</li>
         </RouterLink>
@@ -10,7 +10,7 @@
             <li class="list-group-item list-group-item text-center h5">Colabora</li>
         </RouterLink>
 
-        <RouterLink to="/Categorias" class="w-20">
+        <RouterLink to="/categories" class="w-20">
             <li class="list-group-item multicolor text-center h5">Categorias</li>
         </RouterLink>
     </ul>

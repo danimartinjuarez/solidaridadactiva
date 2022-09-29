@@ -19,7 +19,8 @@ export default {
 </script>
 
 <template>
-    <MenuFilter></MenuFilter>
+    <div class="w-100 border-top border-dark"></div>
+    <MenuFilter ></MenuFilter>
     <div class=" home row row-cols-1 row-cols-md-3 m-5">
     <Card v-for='user in users' :key='user.id' :user="user"></Card>
 

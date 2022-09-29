@@ -59,12 +59,20 @@ const router = createRouter({
       component: () => import('../views/PetsView.vue')
     },
          {
-      path: '/Create',
-      name: 'Create',
+      path: '/Colabora',
+      name: 'Colabora',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/CreateUserView.vue')
+    },
+    {
+      path: '/categories',
+      name: 'categories',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/CategoriesView.vue')
     }
   ]
 })

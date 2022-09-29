@@ -1,16 +1,18 @@
 <template>
-  <base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/wanaka-tree.jpg">
 
 <div id="carousel" >
-  <figure id="spinner" ref="spinner">
-    <img src="./carrusel1.jpg" alt>
-    <img src="still-lake.jpg" alt>
-    <img src="pink-milford-sound.jpg" alt>
-    <img src="paradise.jpg" alt>
-    <img src="morekai.jpg" alt>
-    <img src="milky-blue-lagoon.jpg" alt>
-    <img src="lake-tekapo.jpg" alt>
-    <img src="milford-sound.jpg" alt>
+  <h1 class="text-center text-success">PEQUEÑOS TRIUNFOS</h1>
+  <figure id="spinner" >
+    
+    <img src="carrusel1.jpg" alt class="img-fluid w-100 h-100">
+    
+    <img src="carrusel2.jpg" alt class="img-fluid w-100 h-100">
+    <img src="carrusel3.jpg" alt class="img-fluid w-100 h-100">
+    <img src="carrusel4.webp" alt class="img-fluid w-100 h-100">
+    <img src="carrusel5.jpg" alt class="img-fluid w-100 h-100">
+    <img src="carrusel6.jpg" alt class="img-fluid w-100 h-100">
+    <img src="carrusel7.webp" alt class="img-fluid w-100 h-100">
+    <img src="carrusel8.jfif" alt class="img-fluid w-100 h-100">
   </figure>
 </div>
 <span style="float:left" class="ss-icon" @click="galleryspin('-')">&lt;</span>
@@ -19,7 +21,7 @@
 <script>
   export default{
     data: () => ({
-    angle: 0
+    angle: 0,
   }),     
 
     
@@ -30,9 +32,9 @@
   
 galleryspin(sign) { 
  
-if (!sign) { this.angle = this.$angle + 45; } else { this.$angle = this.$angle - 45; }
+if (!sign) { this.angle = this.angle + 45; } else { this.angle = this.angle - 45; }
 
-document.querySelector("#spinner").setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+document.querySelector("#spinner").setAttribute("style","-webkit-transform: rotateY("+ this.angle +"deg); -moz-transform: rotateY("+ this.angle +"deg); transform: rotateY("+ this.angle +"deg);");
 }
 },
 }
