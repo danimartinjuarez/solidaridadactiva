@@ -6,15 +6,15 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Nombre</label>
-                            <input ref="name" v-model="user.name" type="text" class="form-control"
+                            <input ref="name"  :value=user.name  type="text" class="form-control"
                                 :class="{ 'is-invalid': process && invalidName }" @focus="resetEstado"
-                                @keypress="resetEstado" />
+                                @keypress="resetEstado" /> 
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Contacto</label>
-                            <input v-model="user.contact" type="text"
+                            <input :value=user.contact type="text"
                                 :class="{ 'is-invalid': process && invalidContact }" class="form-control"
                                 @focus="resetEstado" />
                         </div>
@@ -94,6 +94,9 @@
 <script>
 export default {
     name: "userForm",
+    props: {
+        edituser: Object,
+    },
     data() {
         return {
             process: false,
@@ -168,22 +171,22 @@ export default {
             return this.user.contact.length < 1;
         },
         invalidActivityType() {
-            return  this.user.activityType.length < 1;
+            this.user.activityType.length < 1;
         },
         invalidLocation() {
-            return   this.user.location.length < 1;
+            this.user.location.length < 1;
         },
         invalidphoto() {
-            return  this.user.photo.length < 1;
+            this.user.photo.length < 1;
         },
         invalidWhatLike() {
-            return this.user.whatLike.length < 1;
+            this.user.whatLike.length < 1;
         },
         invalidWhatOffer() {
-            return this.user.whatOffer.length < 1;
+            this.user.whatOffer.length < 1;
         },
         invalidTitle() {
-            return this.user.title.length < 1;
+            this.user.title.length < 1;
         }
     },
 
