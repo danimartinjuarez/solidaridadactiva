@@ -1,6 +1,6 @@
 <template >
   <div
-    class="p-2 border text-dark bg-opacity-10 m-2 col-md-5 mx-auto card "
+    class="p-2 border text-dark bg-opacity-10 m-2 col-md-5 mx-auto card"
     :class="{
       'bg-info border-info': user.activityType === 'baby',
       'bg-warning border-warning': user.activityType === 'senior',
@@ -9,7 +9,7 @@
     }"
   >
     <img
-      class="card-img-top img-fluid "
+      class="card-img-top img-fluid"
       :src="user.photo"
       alt="Card image cap"
     />
@@ -21,23 +21,25 @@
       <h5 class="card-title">{{ user.location }}</h5>
     </div>
     <div class="card-footer d-flex justify-content-around">
-      <InterestingButton></InterestingButton>
+      <button  @click.prevent="addFavorites(user)" class="btn border border-success">
+        Me interesa
+      </button>
       <button class="btn border-danger" @click.prevent="deleteUser(user)">
         🗑️ Borrar
       </button>
       <button
-        class="btn border-warning "
+        class="btn border-warning"
         data-toggle="modal"
         :data-target="'#updateModal' + user.id"
       >
         ✏️ Modificar
       </button>
       <button
-        class="btn border-info "
+        class="btn border-info"
         data-toggle="modal"
         :data-target="'#viewModal' + user.id"
       >
-      👀 Detalles
+        👀 Detalles
       </button>
       <div
         class="modal fade modal-lg"
@@ -46,15 +48,17 @@
         role="dialog"
         aria-labelledby="updateModalLabel"
         aria-hidden="true"
-        
       >
-        <div class="modal-dialog modal-dialog-centered" role="document" >
-          <div class="modal-content bg-opacity-50" :class="{
-      'bg-info border-info': user.activityType === 'baby',
-      'bg-warning border-warning': user.activityType === 'senior',
-      'bg-secondary border-secondary': user.activityType === 'general',
-      'bg-success border-success': user.activityType === 'pets',
-    }">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div
+            class="modal-content bg-opacity-50"
+            :class="{
+              'bg-info border-info': user.activityType === 'baby',
+              'bg-warning border-warning': user.activityType === 'senior',
+              'bg-secondary border-secondary': user.activityType === 'general',
+              'bg-success border-success': user.activityType === 'pets',
+            }"
+          >
             <div class="modal-header">
               <h5 class="modal-title text-white" id="updateModalLabel">
                 Modificar : {{ user.title }}
@@ -73,9 +77,9 @@
                 <form @submit.prevent="sendForm()">
                   <div class="container">
                     <div class="row">
-                        <div class="col-md-8 m-2">
+                      <div class="col-md-8 m-2">
                         <div class="form-group">
-                          <label><h4>Titulo: </h4></label>
+                          <label><h4>Titulo:</h4></label>
                           <input
                             v-model="user.title"
                             type="text"
@@ -122,14 +126,14 @@
                             class="form-control-lg"
                             @focus="resetEstado"
                           >
-                          <option value="baby" >Para Peques</option>
-                          <option value="senior">Para Senior</option>
-                          <option value="general">Para Todos</option>
-                          <option value="pets">Para Mascotas</option>
-</select>
+                            <option value="baby">Para Peques</option>
+                            <option value="senior">Para Senior</option>
+                            <option value="general">Para Todos</option>
+                            <option value="pets">Para Mascotas</option>
+                          </select>
                         </div>
                       </div>
-                      
+
                       <div class="col-md-4">
                         <div class="form-group">
                           <label><h4>Localizacion:</h4></label>
@@ -148,7 +152,6 @@
                         <div class="form-group">
                           <label><h4>Necesito:</h4></label>
                           <textarea
-                          
                             v-model="user.whatLike"
                             :class="{
                               'is-invalid': process && invalidWhatLike,
@@ -163,7 +166,6 @@
                           <label><h4>Ofrezco:</h4></label>
                           <textarea
                             v-model="user.whatOffer"
-                            
                             :class="{
                               'is-invalid': process && invalidWhatOffer,
                             }"
@@ -172,7 +174,7 @@
                           />
                         </div>
                       </div>
-                      
+
                       <div class="col-md-8 m-2">
                         <div class="form-group">
                           <label><h4>Foto:</h4></label>
@@ -183,7 +185,7 @@
                             class="form-control-lg m-2"
                             @focus="resetEstado"
                           />
-                          <br/>
+                          <br />
                           <img :src="user.photo" class="m-2 img-fluid w-50" />
                         </div>
                       </div>
@@ -213,7 +215,7 @@
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
-                          <button class="btn border border-danger text-white ">
+                          <button class="btn border border-danger text-white">
                             Modificar
                           </button>
                         </div>
@@ -242,12 +244,15 @@
         aria-hidden="true"
       >
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content bg-opacity-50" :class="{
-      'bg-info border-info': user.activityType === 'baby',
-      'bg-warning border-warning': user.activityType === 'senior',
-      'bg-secondary border-secondary': user.activityType === 'general',
-      'bg-success border-success': user.activityType === 'pets',
-    }">
+          <div
+            class="modal-content bg-opacity-50"
+            :class="{
+              'bg-info border-info': user.activityType === 'baby',
+              'bg-warning border-warning': user.activityType === 'senior',
+              'bg-secondary border-secondary': user.activityType === 'general',
+              'bg-success border-success': user.activityType === 'pets',
+            }"
+          >
             <div class="modal-header">
               <h5 class="modal-title text-white" id="updateModalLabel">
                 {{ user.title }}
@@ -269,30 +274,40 @@
                   alt="Card image cap"
                 />
                 <div class="card-body">
-                  <h1 class="card-title ">{{ user.title }}</h1>
+                  <h1 class="card-title">{{ user.title }}</h1>
                   <h4>Que le gustaria :</h4>
                   <p class="card-text">{{ user.whatLike }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
-                    <h4>Que ofrece:</h4> 
+                    <h4>Que ofrece:</h4>
                     <p>{{ user.whatOffer }}</p>
                   </li>
                   <li class="list-group-item">
-                   <h5> Localizacion:</h5> <h5>{{ user.location }}</h5>
+                    <h5>Localizacion:</h5>
+                    <h5>{{ user.location }}</h5>
                   </li>
                   <li class="list-group-item">
-                    <h4>Tipo de actividad:</h4> <h5>{{ user.activityType }}</h5>
+                    <h4>Tipo de actividad:</h4>
+                    <h5>{{ user.activityType }}</h5>
                   </li>
-                  <li class="list-group-item"><h4>Nombre</h4> <h6>{{ user.name }}</h6></li>
-                  <li class="list-group-item"><h4>Contacto:</h4> <h6>{{ user.contact }}</h6></li>
+                  <li class="list-group-item">
+                    <h4>Nombre</h4>
+                    <h6>{{ user.name }}</h6>
+                  </li>
+                  <li class="list-group-item">
+                    <h4>Contacto:</h4>
+                    <h6>{{ user.contact }}</h6>
+                  </li>
                 </ul>
                 <div class="card-body">
                   <RouterLink to="/Normas"><h1>Normas</h1></RouterLink>
                 </div>
               </div>
               <div class="modal-footer">
-            
+                <button  @click.prevent="addFavorites(user)" class="btn border border-white text-white hover-zoom">
+        Me interesa
+      </button>
                 <button
                   type="button"
                   class="btn border border-white text-white"
@@ -310,8 +325,9 @@
 </template>
 
 <script>
-import InterestingButton from "./InterestingButton.vue";
 import ActivityView from "../views/Activity.vue";
+import { mapState, mapActions } from 'pinia';
+import { favouriteList} from '../stores/favourites'
 export default {
   data() {
     return {
@@ -324,7 +340,7 @@ export default {
   props: {
     user: Object,
   },
-  components: { InterestingButton, ActivityView },
+  components: {  ActivityView },
 
   methods: {
     deleteUser() {
@@ -392,6 +408,8 @@ export default {
       }
       window.location.reload();
     },
+
+    ...mapActions(favouriteList, ["addFavorites"]),
   },
   computed: {
     invalidName() {
@@ -418,6 +436,7 @@ export default {
     invalidTitle() {
       return this.user.title.length < 1;
     },
+    ...mapState(favouriteList, ["user"]),
   },
 };
 </script>

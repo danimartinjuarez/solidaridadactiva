@@ -13,6 +13,9 @@
         <RouterLink to="/categories" class="w-20">
             <li class="list-group-item multicolor text-center h5">Categorias</li>
         </RouterLink>
+        <RouterLink to="/Favourites" class="w-20">
+            <li class="list-group-item multicolor text-center h5">Favoritos</li>
+        </RouterLink>
     </ul>
 </template>
 <script>

@@ -11,13 +11,16 @@
                         <div class="col-md-6 m-2">
                         <div class="form-group">
                           <label><h4>Titulo: </h4></label>
+                          
                           <input
                             v-model="user.title"
                             type="text"
                             :class="{ 'is-invalid': process && invalidTitle }"
                             class="form-control-lg m-4"
                             @focus="resetEstado"
+                            placeholder="Aqui el titulo"
                           />
+                         
                         </div>
                       </div>
                       <div class="col-md-6 m-2">
