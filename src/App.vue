@@ -6,12 +6,12 @@ import NavBar from './components/NavBar.vue';
 
 </script>
 
-<template><div class="h-100 w-100">
+<template>
 <Header></Header>
 <NavBar></NavBar>
 <RouterView />
   
-  </div>
+
 </template>
 
 <style scoped>

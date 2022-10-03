@@ -1,93 +1,170 @@
 <template>
-    <div id="userForm">
-        <form @submit.prevent="sendForm">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
+    <div id="userForm" :class="{
+      'bg-info border-info': user.activityType === 'baby',
+      'bg-warning border-warning': user.activityType === 'senior',
+      'bg-secondary border-secondary': user.activityType === 'general',
+      'bg-success border-success': user.activityType === 'pets',
+    }" class="bg-opacity-10  border m-4">
+        <form @submit.prevent="sendForm()" >
+                  <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 m-2">
                         <div class="form-group">
-                            <label>Nombre</label>
-                            <input ref="name" v-model="user.name" type="text" class="form-control"
-                                :class="{ 'is-invalid': process && invalidName }" @focus="resetEstado"
-                                @keypress="resetEstado" />
+                          <label><h4>Titulo: </h4></label>
+                          <input
+                            v-model="user.title"
+                            type="text"
+                            :class="{ 'is-invalid': process && invalidTitle }"
+                            class="form-control-lg m-4"
+                            @focus="resetEstado"
+                          />
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                      </div>
+                      <div class="col-md-6 m-2">
                         <div class="form-group">
-                            <label>Contacto</label>
-                            <input v-model="user.contact" type="text"
-                                :class="{ 'is-invalid': process && invalidContact }" class="form-control"
-                                @focus="resetEstado" />
+                          <label><h4>Nombre: </h4></label>
+                          <input
+                            ref="name"
+                            v-model="user.name"
+                            type="text"
+                            class="form-control-lg m-4"
+                            :class="{ 'is-invalid': process && invalidName }"
+                            @focus="resetEstado"
+                            @keypress="resetEstado"
+                          />
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                      </div>
+                      <div class="col-md-4 m-2">
                         <div class="form-group">
-                            <label>Tipo de actividad</label>
-                            <input v-model="user.activityType" type="text"
-                                :class="{ 'is-invalid': process && invalidActivityType }" class="form-control"
-                                @focus="resetEstado" />
+                          <label><h4>Contacto:</h4></label>
+                          <input
+                            v-model="user.contact"
+                            type="text"
+                            :class="{ 'is-invalid': process && invalidContact }"
+                            class="form-control-lg m-4"
+                            @focus="resetEstado"
+                          />
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                      </div>
+                      <div class="col-md-6">
                         <div class="form-group">
-                            <label>Foto</label>
-                            <input v-model="user.photo" type="text" :class="{ 'is-invalid': process && invalidphoto}"
-                                class="form-control" @focus="resetEstado" />
+                          <label><h4>Localizacion:</h4></label>
+                          <input
+                            type="text"
+                            v-model="user.location"
+                            :class="{
+                              'is-invalid': process && invalidLocation,
+                            }"
+                            class="form-control-lg m-4"
+                            @focus="resetEstado"
+                          />
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                      </div>
+                      <div class="col-md-4 m-2">
                         <div class="form-group">
-                            <label>Localizacion</label>
-                            <input v-model="user.location" type="text"
-                                :class="{ 'is-invalid': process && invalidLocation }" class="form-control"
-                                @focus="resetEstado" />
+                          <label><h4>Tipo de actividad:</h4></label>
+                          <select
+                            v-model="user.activityType"
+                            :class="{
+                              'is-invalid': process && invalidActivityType,
+                            }"
+                            class="form-control-lg m-4"
+                            @focus="resetEstado"
+                          >
+                          <option value="baby" >Para Peques</option>
+                          <option value="senior">Para Senior</option>
+                          <option selected value="general" >Para Todos</option>
+                          <option value="pets">Para Mascotas</option>
+</select>
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                      </div>
+                      
+                      
+                      <div class="col-md-8 m-2">
                         <div class="form-group">
-                            <label>Necesito:</label>
-                            <input v-model="user.whatLike" type="text"
-                                :class="{ 'is-invalid': process && invalidWhatLike }" class="form-control"
-                                @focus="resetEstado" />
+                          <label><h4>Necesito:</h4></label>
+                          <textarea
+                          rows="6" 
+                            v-model="user.whatLike"
+                            :class="{
+                              'is-invalid': process && invalidWhatLike,
+                            }"
+                            class="form-control-lg w-100 m-4"
+                            @focus="resetEstado"
+                          />
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                      </div>
+                      <div class="col-md-8 m-2">
                         <div class="form-group">
-                            <label>Ofrezco:</label>
-                            <input v-model="user.whatOffer" type="text"
-                                :class="{ 'is-invalid': process && invalidWhatOffer }" class="form-control"
-                                @focus="resetEstado" />
+                          <label><h4>Ofrezco:</h4></label>
+                          <textarea
+                            v-model="user.whatOffer"
+                            rows="6" 
+                            :class="{
+                              'is-invalid': process && invalidWhatOffer,
+                            }"
+                            class="form-control-lg w-100 m-4"
+                            @focus="resetEstado"
+                          />
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                      </div>
+                      
+                      <div class="col-md-8 m-2">
                         <div class="form-group">
-                            <label>Titulo</label>
-                            <input v-model="user.title" type="text" :class="{ 'is-invalid': process && invalidTitle }"
-                                class="form-control" @focus="resetEstado" />
+                          <label><h4>Foto:</h4></label>
+                          <input
+                            v-model="user.photo"
+                            type="text"
+                            :class="{ 'is-invalid': process && invalidphoto }"
+                            class="form-control-lg m-4"
+                            @focus="resetEstado"
+                          />
+                          <br/>
+                          <img :src="user.photo" class="m-4 img-fluid w-50" />
                         </div>
+                      </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
+                  </div>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div
+                          v-if="error && process"
+                          class="alert alert-danger"
+                          role="alert"
+                        >
+                          Debes rellenar todos los campos!
+                        </div>
+                        <div
+                          v-if="correcto"
+                          class="alert alert-success"
+                          role="alert"
+                        >
+                          Ha sido creado correctamente!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row justify-content-end">
+                    
+                      <div class="col-md-4">
                         <div class="form-group">
-                            <button class="btn btn-primary">Añadir Usuario</button>
+                          <button class="btn border border-danger  ">
+                            Crear
+                          </button>
+                          <button
+                      type="button"
+                      class="btn border border-dark m-2"
+                      
+                    >
+                      Close
+                    </button>
                         </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div v-if="error && process" class="alert alert-danger" role="alert">
-                            Debes rellenar todos los campos!
-                        </div>
-                        <div v-if="correcto" class="alert alert-success" role="alert">
-                            El user ha sido agregada correctamente!
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
+                      </div>
+                    
+                    
+                  </div>
+                </form>
     </div>
 </template>
 
@@ -194,5 +271,7 @@ export default {
 </script>
 
 <style>
-
+#userForm {
+    min-width: 90%;
+}
 </style>

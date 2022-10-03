@@ -16,6 +16,7 @@ export default {
     display: flex;
 	height: 20vh;
     max-width: 100vw;
+    min-width: 100vw;
     
 }
 .title{
