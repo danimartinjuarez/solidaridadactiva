@@ -14,7 +14,6 @@
     <InterestingButton></InterestingButton>
 </template>
 <script>
-import InterestingButton from '../components/InterestingButton.vue';
 export default {
     data() {
         return {
