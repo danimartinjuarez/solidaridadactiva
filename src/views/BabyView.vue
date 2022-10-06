@@ -1,3 +1,10 @@
+<template>
+    <MenuFilter></MenuFilter>
+    <div class=" home row row-cols-1 row-cols-md-3 m-5">
+        <Card v-for="user in users" :key='user.id' :user="user"></Card>
+
+    </div>
+</template>
 <script >
 import Card from '../components/Card.vue';
 import MenuFilter from '../components/MenuFilter.vue';
@@ -23,13 +30,7 @@ export default {
 }
 </script>
 
-<template>
-    <MenuFilter></MenuFilter>
-    <div class=" home row row-cols-1 row-cols-md-3 m-5">
-        <Card v-for="user in users" :key='user.id' :user="user"></Card>
 
-    </div>
-</template>
 <style scoped>
 .home
 {

@@ -11,7 +11,6 @@
     
         </div>
     </div>
-    <InterestingButton></InterestingButton>
 </template>
 <script>
 export default {
