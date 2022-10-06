@@ -7,7 +7,11 @@ Solidaridadactiva is a fictitious project of a web app that seeks to find people
 Bootcamp final project with front in Vue Importing data from an API in Java. CRUD is performed with the API, PINIA is used for a temporary favorites page.
 
 
-
+<img src="https://github.com/danimartinjuarez/solidaridadactiva/blob/master/public/Captura.PNG">
+<img src="https://github.com/danimartinjuarez/solidaridadactiva/blob/master/public/Captura2.PNG">
+<img src="https://github.com/danimartinjuarez/solidaridadactiva/blob/master/public/Captura3.PNG">
+<img src="https://github.com/danimartinjuarez/solidaridadactiva/blob/master/public/Captura4.PNG">
+<img src="https://github.com/danimartinjuarez/solidaridadactiva/blob/master/public/Captura5.PNG">
 
 
 
