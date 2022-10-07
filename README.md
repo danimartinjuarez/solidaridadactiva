@@ -53,6 +53,12 @@ Start the server
 ```
 - [Back-end Repo](https://github.com/danimartinjuarez/solidarid-activa)
 
+```bash
+  npm run test
+```
+<img src="https://github.com/danimartinjuarez/solidaridadactiva/blob/master/public/Captura6.PNG">
+
+
 
 
 ## Work methodology
