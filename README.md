@@ -51,6 +51,8 @@ Start the server
 ```bash
   run Apache and MySQL server in XAMPP
 ```
+- [Back-end Repo](https://github.com/danimartinjuarez/solidarid-activa)
+
 
 
 ## Work methodology
